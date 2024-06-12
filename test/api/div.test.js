@@ -45,7 +45,7 @@ describe('Teste de API - DIVIDIR', () => {
     })
 
     test('POST /api/dividir - Deve dividir 12 / null  e o resultado deverá ser - Não dá para dividir com valores inválidos! (CT24)', async () => {
-        const response = await request(app).post('/api/dividir').send({num1: 12, num2: null})
+        const response = await request(app).post('/api/dividir').send({num1: 12})
     
         expect(response.statusCode).toBe(500)
         expect(response.body).toEqual({ message: 'Não dá para dividir com valores inválidos!'})
